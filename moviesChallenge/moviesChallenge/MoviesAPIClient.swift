@@ -10,7 +10,7 @@ import Foundation
 
 class MoviesAPIClient {
     
-    class func getMovies(with completion: @escaping ([String : String])-> Void) {
+    class func getMovies(with completion: @escaping ([[String : AnyObject]])-> Void) {
         
         let urlString = "https://www.omdbapi.com/?t=\(searchInput)&y=&plot=short&r=json"
         
@@ -26,8 +26,7 @@ class MoviesAPIClient {
                     
                     do {
                         
-                        let responseJSON = try JSONSerialization.jsonObject(with: unwrappedData, options: []) as! [String: String]
-                        
+                        let responseJSON = try JSONSerialization.jsonObject(with: unwrappedData, options: []) as! [[String: AnyObject]]
                         
                         completion(responseJSON)
                         
@@ -46,3 +45,10 @@ class MoviesAPIClient {
     }
     
 }
+
+/* Array of Dictionaries of type String: Any, where Any could be an array of [String: String] or just String
+ [String: [[String: String, String: String, String: String, String: String, String: String], [String: String, String: String, String: String, String: String, String: String], [String: String, String: String, String: String, String: String, String: String]]
+ [String: String]
+ [String: String]
+ ]
+ */

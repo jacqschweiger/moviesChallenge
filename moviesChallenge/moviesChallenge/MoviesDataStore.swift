@@ -18,16 +18,13 @@ class MoviesDataStore {
     var movies: [Movie]!
     
     func getMoviesFromAPI(completion: @escaping ()->()) {
+       
+        MoviesAPIClient.getMovies { (results) in
+            
+        }
         
-        movies = []
         
-        MoviesAPIClient.getMovies(with: { (movies) in
-            for movie in movies {
-                let newMovie = Movie(dictionary: movie)
-                self.movies.append(newMovie)
-            }
-            completion()
-        })
+        completion()
     }
 }
 

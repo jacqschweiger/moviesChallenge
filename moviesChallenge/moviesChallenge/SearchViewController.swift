@@ -28,9 +28,8 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         store.getMoviesFromAPI {
-            print(self.store.movies[0].title)
+            
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
