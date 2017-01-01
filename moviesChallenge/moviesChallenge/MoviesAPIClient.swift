@@ -12,7 +12,7 @@ class MoviesAPIClient {
     
     class func getMovies(with completion: @escaping ([String : String])-> Void) {
         
-        let urlString = "http://www.omdbapi.com/?t=\(searchInput)&y=&plot=short&r=json"
+        let urlString = "https://www.omdbapi.com/?t=\(searchInput)&y=&plot=short&r=json"
         
         let url = URL(string: urlString)
         

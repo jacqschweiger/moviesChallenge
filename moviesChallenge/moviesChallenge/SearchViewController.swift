@@ -21,11 +21,15 @@
 import UIKit
 
 class SearchViewController: UIViewController {
+    
+    var store = MoviesDataStore.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        store.getMoviesFromAPI {
+            print(self.store.movies[0].title)
+        }
         
     }
 

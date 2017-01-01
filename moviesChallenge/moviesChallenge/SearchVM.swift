@@ -8,4 +8,4 @@
 
 import Foundation
 
-var searchInput: String = ""
+var searchInput: String = "titanic"
