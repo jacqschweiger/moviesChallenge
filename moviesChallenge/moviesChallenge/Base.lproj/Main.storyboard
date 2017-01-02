@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gjl-3F-6SX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uqC-Id-hsp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search View Controller-->
+        <!--Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="moviesChallenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,19 +27,19 @@
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="searchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mGY-k4-zKC"/>
-                                    <segue destination="JL7-Vo-7mg" kind="presentation" identifier="showResults" id="gbN-Fn-o9t"/>
+                                    <segue destination="JL7-Vo-7mg" kind="show" identifier="showResults" id="ntw-Oc-laX"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="PMa-53-bmw"/>
+                    <navigationItem key="navigationItem" title="Search" id="PMa-53-bmw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849" y="169"/>
+            <point key="canvasLocation" x="3746.4000000000001" y="168.6656671664168"/>
         </scene>
-        <!--Results CollectionVC-->
+        <!--Results-->
         <scene sceneID="5Mz-Q2-qH9">
             <objects>
                 <collectionViewController id="JL7-Vo-7mg" customClass="ResultsCollectionVC" customModule="moviesChallenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,13 +82,14 @@
                             <outlet property="delegate" destination="JL7-Vo-7mg" id="YCK-iX-wDf"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="Results" id="Y34-BL-OqB"/>
                     <connections>
                         <outlet property="collectionView" destination="MDq-3t-WKK" id="LgH-UX-CR1"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJ6-Ne-157" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1703" y="169"/>
+            <point key="canvasLocation" x="4519.1999999999998" y="168.6656671664168"/>
         </scene>
         <!--DetailVC-->
         <scene sceneID="MXL-fs-Zvt">
@@ -118,25 +119,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5r-3O-t7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2413.5999999999999" y="168.6656671664168"/>
+            <point key="canvasLocation" x="5231.1999999999998" y="168.6656671664168"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="duB-qD-bQj">
+        <scene sceneID="xSA-nm-rrn">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gjl-3F-6SX" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uqC-Id-hsp" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qk6-dY-Tkd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="P68-7z-tyQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8TP-FP-1kc"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4cX-de-Vh5"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0ZH-X9-om8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QoY-Fe-iiz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-58.399999999999999" y="168.6656671664168"/>
+            <point key="canvasLocation" x="2805.5999999999999" y="168.6656671664168"/>
         </scene>
     </scenes>
 </document>
