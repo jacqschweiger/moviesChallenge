@@ -10,5 +10,17 @@ import Foundation
 import UIKit
 
 class ResultsCollectionVC: UICollectionViewController  {
+    
+    let store = MoviesDataStore.sharedInstance
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print("hi")
+        
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return store.movies.count
+    }
 }
