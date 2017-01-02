@@ -20,7 +20,10 @@ class MoviesDataStore {
     func getMoviesFromAPI(completion: @escaping ()->()) {
        
         MoviesAPIClient.getMovies { (results) in
-            
+            for result in results {
+                let newMovie = Movie(dictionary: result as! [String : String])
+                print(newMovie.title)
+            }
         }
         
         

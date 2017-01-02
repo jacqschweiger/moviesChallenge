@@ -26,11 +26,9 @@ class MoviesAPIClient {
                     
                     do {
                         
-                        let responseJSON = try JSONSerialization.jsonObject(with: unwrappedData, options: []) as! [[String: AnyObject]]
+                        let responseJSON = try JSONSerialization.jsonObject(with: unwrappedData, options: []) as! [String: AnyObject]
                         
-                        completion(responseJSON)
-                        
-                        print(responseJSON)
+                        completion([responseJSON])
                         
                     } catch {
                         
@@ -45,10 +43,3 @@ class MoviesAPIClient {
     }
     
 }
-
-/* Array of Dictionaries of type String: Any, where Any could be an array of [String: String] or just String
- [String: [[String: String, String: String, String: String, String: String, String: String], [String: String, String: String, String: String, String: String, String: String], [String: String, String: String, String: String, String: String, String: String]]
- [String: String]
- [String: String]
- ]
- */
