@@ -25,9 +25,7 @@ class MoviesDataStore {
             for movie in results {
                 let newMovie = Movie(dictionary: movie)
                 self.movies.append(newMovie)
-                print(newMovie.title)
             }
-            print(self.movies.count)
         }
         
         completion()

@@ -16,11 +16,29 @@ class ResultsCollectionVC: UICollectionViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("hi")
-        
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return store.movies.count
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCell", for: indexPath) as! ResultsCollectionViewCell
+        cell.backgroundColor = UIColor.blue
+        let movie = store.movies[indexPath.item]
+        cell.cellLabel.text = movie.title
+        return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            let dest = segue.destination as! DetailVC
+            
+            if let indexPath = collectionView?.indexPathsForSelectedItems?[0].item {
+                dest.textValue = store.movies[indexPath].title
+                print(store.movies[indexPath].title)
+            }
+        }
+    }
+    
 }

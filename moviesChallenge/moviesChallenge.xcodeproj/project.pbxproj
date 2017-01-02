@@ -19,6 +19,7 @@
 		7145DD921E19A29F00C14205 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7145DD911E19A29F00C14205 /* SearchVM.swift */; };
 		7145DD941E19A31B00C14205 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7145DD931E19A31B00C14205 /* Movie.swift */; };
 		7145DD961E19A54700C14205 /* MoviesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7145DD951E19A54700C14205 /* MoviesDataStore.swift */; };
+		71BA2F861E19FCAD003A0FE4 /* ResultsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA2F851E19FCAD003A0FE4 /* ResultsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		7145DD911E19A29F00C14205 /* SearchVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
 		7145DD931E19A31B00C14205 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		7145DD951E19A54700C14205 /* MoviesDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesDataStore.swift; sourceTree = "<group>"; };
+		71BA2F851E19FCAD003A0FE4 /* ResultsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				7145DD771E1998C000C14205 /* Main.storyboard */,
 				7145DD8F1E19A12D00C14205 /* DetailVC.swift */,
 				7145DD8D1E19A0D800C14205 /* ResultsCollectionVC.swift */,
+				71BA2F851E19FCAD003A0FE4 /* ResultsCollectionViewCell.swift */,
 				7145DD751E1998C000C14205 /* SearchViewController.swift */,
 			);
 			name = View;
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7145DD761E1998C000C14205 /* SearchViewController.swift in Sources */,
+				71BA2F861E19FCAD003A0FE4 /* ResultsCollectionViewCell.swift in Sources */,
 				7145DD741E1998C000C14205 /* AppDelegate.swift in Sources */,
 				7145DD8E1E19A0D800C14205 /* ResultsCollectionVC.swift in Sources */,
 				7145DD7C1E1998C000C14205 /* moviesChallenge.xcdatamodeld in Sources */,
@@ -354,6 +358,7 @@
 				7145DD871E1998C000C14205 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

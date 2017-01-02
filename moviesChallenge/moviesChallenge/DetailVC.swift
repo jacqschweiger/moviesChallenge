@@ -11,5 +11,14 @@ import UIKit
 
 class DetailVC: UIViewController {
     
+    var textValue = ""
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        titleLabel.text = textValue
+    }
     
 }
