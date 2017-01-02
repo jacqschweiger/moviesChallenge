@@ -16,13 +16,18 @@ class MoviesDataStore {
     private init() {}
     
     var movies: [Movie]!
-    var moviesDict: [[String: String]]!
     
     func getMoviesFromAPI(completion: @escaping ()->()) {
        
+        movies = []
+        
         MoviesAPIClient.getMovies { (results) in
-            print(results.count)
-            
+            for movie in results {
+                let newMovie = Movie(dictionary: movie)
+                self.movies.append(newMovie)
+                print(newMovie.title)
+            }
+            print(self.movies.count)
         }
         
         completion()
