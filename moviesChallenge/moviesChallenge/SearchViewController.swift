@@ -28,6 +28,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         store.getMoviesFromAPI {
+            
         }
     }
 

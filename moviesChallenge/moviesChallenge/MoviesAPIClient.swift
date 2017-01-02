@@ -10,9 +10,11 @@ import Foundation
 
 class MoviesAPIClient {
     
-    class func getMovies(with completion: @escaping ([[String : AnyObject]])-> Void) {
+    class func getMovies(with completion: @escaping ([[String : String]])-> Void) {
         
-        let urlString = "https://www.omdbapi.com/?t=\(searchInput)&y=&plot=short&r=json"
+        var moviesDict: [[String : String]]!
+        
+        let urlString = "https://www.omdbapi.com/?s=\(searchInput)&y=&plot=short&r=json"
         
         let url = URL(string: urlString)
         
@@ -28,8 +30,10 @@ class MoviesAPIClient {
                         
                         let responseJSON = try JSONSerialization.jsonObject(with: unwrappedData, options: []) as! [String: AnyObject]
                         
-                        completion([responseJSON])
+                        moviesDict = responseJSON["Search"] as! [[String : String]]
                         
+                        completion(moviesDict)
+                    
                     } catch {
                         
                         print(error)
