@@ -24,20 +24,36 @@ class SearchViewController: UIViewController {
     
     var store = MoviesDataStore.sharedInstance
 
-    @IBAction func searchPressed(_ sender: Any) {
-    }
+    @IBOutlet weak var textField: UITextField!
+    
+    @IBOutlet weak var searchButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        store.getMoviesFromAPI {
-            
-        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if textField.text?.isEmpty == false {
+            searchInput = textField.text!
+        } else {
+            searchInput = "hi"
+        }
+        
+        store.getMoviesFromAPI {
+        }
+        
+        if segue.identifier == "showResults" {
+            let dest = segue.destination as! ResultsCollectionVC
+            
+        }
+        
+        
+    }
 
 }
 

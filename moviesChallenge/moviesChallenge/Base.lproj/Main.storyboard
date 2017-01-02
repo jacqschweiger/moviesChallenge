@@ -26,14 +26,24 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
-                                    <action selector="searchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mGY-k4-zKC"/>
-                                    <segue destination="JL7-Vo-7mg" kind="show" identifier="showResults" id="ntw-Oc-laX"/>
+                                    <segue destination="JL7-Vo-7mg" kind="show" identifier="showResults" id="Oi5-SV-uHd"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9iR-Tc-K6V">
+                                <rect key="frame" x="58" y="203" width="266" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="PMa-53-bmw"/>
+                    <connections>
+                        <outlet property="searchButton" destination="3cA-cG-RlT" id="tmD-OF-c1g"/>
+                        <outlet property="textField" destination="9iR-Tc-K6V" id="6mq-mf-CdM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
