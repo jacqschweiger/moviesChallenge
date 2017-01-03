@@ -20,18 +20,14 @@ class ResultsCollectionVC: UICollectionViewController  {
             self.collectionView?.reloadData()
         }
 
-        print("0 fave movies: \(store.favoriteMovies.count)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("8 fave movies: \(store.favoriteMovies.count)")
         
         DispatchQueue.main.async {
             self.collectionView?.reloadData()
         }
         
-        
-        print("9 \(store.favoriteMovies.count)")
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

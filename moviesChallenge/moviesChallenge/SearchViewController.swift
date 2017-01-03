@@ -31,6 +31,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        store.fetchData()
     }
 
     override func didReceiveMemoryWarning() {

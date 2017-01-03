@@ -15,19 +15,12 @@ class FavoritesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        store.fetchData()
+
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
-        print("1 fave movies: \(store.favoriteMovies.count)")
-        store.saveContext()
-        print("2 fave movies: \(store.favoriteMovies.count)")
-        store.fetchData()
-        print("3 fave movies: \(store.favoriteMovies.count)")
-        tableView.reloadData()
-        print("4 fave movies: \(store.favoriteMovies.count)")
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,14 +44,10 @@ class FavoritesTableViewController: UITableViewController {
         if editingStyle == .delete {
             store.favoriteMovies.remove(at: indexPath.row)
         }
-        print("5 fave movies: \(store.favoriteMovies.count)")
 
         store.saveContext()
         
-        print("6 fave movies: \(store.favoriteMovies.count)")
-
         tableView.reloadData()
-        print("7 fave movies: \(store.favoriteMovies.count)")
     }
     
     
