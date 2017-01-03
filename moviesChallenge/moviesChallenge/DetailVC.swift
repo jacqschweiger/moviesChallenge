@@ -18,8 +18,13 @@ class DetailVC: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func addToFavoritesPressed(_ sender: Any) {
-        store.favoriteMovies.append(movie)
-        print(store.favoriteMovies.count)
+        
+        let newFavorite = Film(context: store.persistentContainer.viewContext)
+        newFavorite.title = movie.title
+        store.saveContext()
+        
+//        store.favoriteMovies.append(movie)
+//        print(store.favoriteMovies.count)
         
     }
     

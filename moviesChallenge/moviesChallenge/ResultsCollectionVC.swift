@@ -22,6 +22,8 @@ class ResultsCollectionVC: UICollectionViewController  {
             print("getting info from api")
         }
         
+        print("favorite movies count: \(store.favoriteMovies.count)")
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -62,6 +64,11 @@ class ResultsCollectionVC: UICollectionViewController  {
             if let indexPath = collectionView?.indexPathsForSelectedItems?[0].item {
                 dest.movie = store.movies[indexPath]
             }
+        }
+        
+        if segue.identifier == "showFavorites" {
+            
+            let dest = segue.destination as! FavoritesTableViewController
         }
     }
     

@@ -18,9 +18,10 @@
 		7145DD921E19A29F00C14205 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7145DD911E19A29F00C14205 /* SearchVM.swift */; };
 		7145DD941E19A31B00C14205 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7145DD931E19A31B00C14205 /* Movie.swift */; };
 		7145DD961E19A54700C14205 /* MoviesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7145DD951E19A54700C14205 /* MoviesDataStore.swift */; };
-		716C89A91E1B3E9900B1A8CC /* moviesChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 716C89A71E1B3E9900B1A8CC /* moviesChallenge.xcdatamodeld */; };
 		7171EB531E1C189F00CD8FDD /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7171EB521E1C189F00CD8FDD /* MovieInfo.swift */; };
+		7171EB561E1C3B0100CD8FDD /* moviesChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7171EB541E1C3B0100CD8FDD /* moviesChallenge.xcdatamodeld */; };
 		71BA2F861E19FCAD003A0FE4 /* ResultsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA2F851E19FCAD003A0FE4 /* ResultsCollectionViewCell.swift */; };
+		71F4367D1E1C3E2400A30013 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F4367C1E1C3E2400A30013 /* FavoritesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,9 +38,10 @@
 		7145DD911E19A29F00C14205 /* SearchVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
 		7145DD931E19A31B00C14205 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		7145DD951E19A54700C14205 /* MoviesDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesDataStore.swift; sourceTree = "<group>"; };
-		716C89A81E1B3E9900B1A8CC /* moviesChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = moviesChallenge.xcdatamodel; sourceTree = "<group>"; };
 		7171EB521E1C189F00CD8FDD /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
+		7171EB551E1C3B0100CD8FDD /* moviesChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = moviesChallenge.xcdatamodel; sourceTree = "<group>"; };
 		71BA2F851E19FCAD003A0FE4 /* ResultsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCollectionViewCell.swift; sourceTree = "<group>"; };
+		71F4367C1E1C3E2400A30013 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +78,7 @@
 				7145DD891E199D3200C14205 /* Model */,
 				7145DD881E199D2B00C14205 /* View */,
 				7145DD731E1998C000C14205 /* AppDelegate.swift */,
-				716C89A71E1B3E9900B1A8CC /* moviesChallenge.xcdatamodeld */,
+				7171EB541E1C3B0100CD8FDD /* moviesChallenge.xcdatamodeld */,
 				7145DD7D1E1998C000C14205 /* Assets.xcassets */,
 				7145DD7F1E1998C000C14205 /* LaunchScreen.storyboard */,
 				7145DD821E1998C000C14205 /* Info.plist */,
@@ -90,6 +92,7 @@
 				7145DD771E1998C000C14205 /* Main.storyboard */,
 				7145DD751E1998C000C14205 /* SearchViewController.swift */,
 				7145DD8D1E19A0D800C14205 /* ResultsCollectionVC.swift */,
+				71F4367C1E1C3E2400A30013 /* FavoritesTableViewController.swift */,
 				7145DD8F1E19A12D00C14205 /* DetailVC.swift */,
 				71BA2F851E19FCAD003A0FE4 /* ResultsCollectionViewCell.swift */,
 			);
@@ -190,10 +193,11 @@
 			files = (
 				7145DD761E1998C000C14205 /* SearchViewController.swift in Sources */,
 				7171EB531E1C189F00CD8FDD /* MovieInfo.swift in Sources */,
+				7171EB561E1C3B0100CD8FDD /* moviesChallenge.xcdatamodeld in Sources */,
+				71F4367D1E1C3E2400A30013 /* FavoritesTableViewController.swift in Sources */,
 				71BA2F861E19FCAD003A0FE4 /* ResultsCollectionViewCell.swift in Sources */,
 				7145DD741E1998C000C14205 /* AppDelegate.swift in Sources */,
 				7145DD8E1E19A0D800C14205 /* ResultsCollectionVC.swift in Sources */,
-				716C89A91E1B3E9900B1A8CC /* moviesChallenge.xcdatamodeld in Sources */,
 				7145DD8C1E199E5C00C14205 /* MoviesAPIClient.swift in Sources */,
 				7145DD921E19A29F00C14205 /* SearchVM.swift in Sources */,
 				7145DD961E19A54700C14205 /* MoviesDataStore.swift in Sources */,
@@ -367,12 +371,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		716C89A71E1B3E9900B1A8CC /* moviesChallenge.xcdatamodeld */ = {
+		7171EB541E1C3B0100CD8FDD /* moviesChallenge.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				716C89A81E1B3E9900B1A8CC /* moviesChallenge.xcdatamodel */,
+				7171EB551E1C3B0100CD8FDD /* moviesChallenge.xcdatamodel */,
 			);
-			currentVersion = 716C89A81E1B3E9900B1A8CC /* moviesChallenge.xcdatamodel */;
+			currentVersion = 7171EB551E1C3B0100CD8FDD /* moviesChallenge.xcdatamodel */;
 			path = moviesChallenge.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
