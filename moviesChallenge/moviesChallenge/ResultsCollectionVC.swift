@@ -12,6 +12,7 @@ import UIKit
 class ResultsCollectionVC: UICollectionViewController  {
     
     let store = MoviesDataStore.sharedInstance
+    var movieInfo: MovieInfo!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,22 +47,26 @@ class ResultsCollectionVC: UICollectionViewController  {
             print("movie title: \(movieTitle)")
         }
         
-        store.getFullMovieInfoFromAPI {
-            print("getting full movie info")
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
-            
-            let dest = segue.destination as! DetailVC
-            
-            if let indexPath = collectionView?.indexPathsForSelectedItems?[0].item {
-                dest.movie = store.movies[indexPath]
-                //dest.movieInfo = store.movies[indexPath].title
+        DispatchQueue.main.async {
+            self.store.getFullMovieInfoFromAPI {
+                print("getting full movie info")
             }
         }
+        
+        
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showDetail" {
+//            
+//            let dest = segue.destination as! DetailVC
+//            
+//            if let indexPath = collectionView?.indexPathsForSelectedItems?[0].item {
+//                dest.movie = store.movies[indexPath]
+//                //dest.movieInfo = store.movies[indexPath].title
+//            }
+//        }
+//    }
     
     
 }

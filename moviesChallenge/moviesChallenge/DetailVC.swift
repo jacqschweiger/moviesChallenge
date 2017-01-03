@@ -35,6 +35,9 @@ class DetailVC: UIViewController {
             }
         }
         
+        self.movieInfo = store.movieInfo
+        
+        //print(self.movieInfo.actors)
         
     }
     
