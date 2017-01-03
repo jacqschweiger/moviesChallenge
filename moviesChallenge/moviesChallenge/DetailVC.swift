@@ -23,9 +23,6 @@ class DetailVC: UIViewController {
         newFavorite.title = movie.title
         store.saveContext()
         
-//        store.favoriteMovies.append(movie)
-//        print(store.favoriteMovies.count)
-        
     }
     
     override func viewDidLoad() {

@@ -16,14 +16,21 @@ class ResultsCollectionVC: UICollectionViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("4")
-        
-        store.getFullMovieInfoFromAPI { 
-            print("getting info from api")
+        DispatchQueue.main.async {
+            self.store.getMoviesFromAPI {
+                print("2")
+            }
         }
         
-        print("favorite movies count: \(store.favoriteMovies.count)")
+        collectionView?.reloadData()
         
+        
+        print("4")
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        collectionView?.reloadData()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -45,16 +52,6 @@ class ResultsCollectionVC: UICollectionViewController  {
         
         return cell
     }
-    
-//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        
-//        if let indexPath = collectionView.indexPathsForSelectedItems?[0].item {
-//            movieTitle = store.movies[indexPath].title
-//            print("movie title: \(movieTitle)")
-//        }
-//        
-//        
-//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {

@@ -7,13 +7,13 @@
 //
 
 /*
- A user should be able to search for movies or TV shows to then view them in a UICollectionView or UITableView (your choice).
+ DONE A user should be able to search for movies or TV shows to then view them in a UICollectionView or UITableView (your choice).
  
  A user should be able to tap on a cell and see a detail view with information about the movie.
  
  If the movie contains "Leonardo DiCaprio" as one of its actors, then the cell and detail view should indicate that in some way.
  
- A user should be able to favorite films. These films that were "favorited" should be persisted using Core Data.
+DONE A user should be able to favorite films. These films that were "favorited" should be persisted using Core Data.
  
  Use MVVM.
 */
@@ -45,15 +45,16 @@ class SearchViewController: UIViewController {
             searchInput = "hi"
         }
         
-        store.getMoviesFromAPI {
-            print("2")
-        }
+//        self.store.getMoviesFromAPI {
+//            print("2")
+//        }
         
         if segue.identifier == "showResults" {
             let dest = segue.destination as! ResultsCollectionVC
             print("3")
             
         }
+        
         
         
     }
