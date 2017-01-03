@@ -12,12 +12,15 @@ import UIKit
 class ResultsCollectionVC: UICollectionViewController  {
     
     let store = MoviesDataStore.sharedInstance
-    var movieInfo: MovieInfo!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("4")
+        
+        store.getFullMovieInfoFromAPI { 
+            print("getting info from api")
+        }
         
     }
     
@@ -41,32 +44,26 @@ class ResultsCollectionVC: UICollectionViewController  {
         return cell
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let indexPath = collectionView.indexPathsForSelectedItems?[0].item {
-            movieTitle = store.movies[indexPath].title
-            print("movie title: \(movieTitle)")
-        }
-        
-        DispatchQueue.main.async {
-            self.store.getFullMovieInfoFromAPI {
-                print("getting full movie info")
+//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        
+//        if let indexPath = collectionView.indexPathsForSelectedItems?[0].item {
+//            movieTitle = store.movies[indexPath].title
+//            print("movie title: \(movieTitle)")
+//        }
+//        
+//        
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            
+            let dest = segue.destination as! DetailVC
+            
+            if let indexPath = collectionView?.indexPathsForSelectedItems?[0].item {
+                dest.movie = store.movies[indexPath]
             }
         }
-        
-        
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showDetail" {
-//            
-//            let dest = segue.destination as! DetailVC
-//            
-//            if let indexPath = collectionView?.indexPathsForSelectedItems?[0].item {
-//                dest.movie = store.movies[indexPath]
-//                //dest.movieInfo = store.movies[indexPath].title
-//            }
-//        }
-//    }
     
     
 }

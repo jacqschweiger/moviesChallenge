@@ -12,7 +12,6 @@ import UIKit
 class DetailVC: UIViewController {
     
     var movie: Movie!
-    var movieInfo: MovieInfo!
     var store = MoviesDataStore.sharedInstance
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -34,10 +33,6 @@ class DetailVC: UIViewController {
                 self.imageView.image = UIImage(data: data as Data)
             }
         }
-        
-        self.movieInfo = store.movieInfo
-        
-        //print(self.movieInfo.actors)
         
     }
     
