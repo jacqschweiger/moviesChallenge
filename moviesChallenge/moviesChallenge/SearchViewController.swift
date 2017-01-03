@@ -45,9 +45,9 @@ class SearchViewController: UIViewController {
             searchInput = "hi"
         }
         
-//        self.store.getMoviesFromAPI {
-//            print("2")
-//        }
+        self.store.getMoviesFromAPI {
+            print("2")
+        }
         
         if segue.identifier == "showResults" {
             let dest = segue.destination as! ResultsCollectionVC

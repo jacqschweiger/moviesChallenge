@@ -16,13 +16,14 @@ class ResultsCollectionVC: UICollectionViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.main.async {
-            self.store.getMoviesFromAPI {
-                print("2")
-            }
-        }
+//        DispatchQueue.main.async {
+//            self.store.getMoviesFromAPI {
+//                print("2")
+//            }
+//        }
         
         collectionView?.reloadData()
+        collectionView?.reloadInputViews()
         
         
         print("4")
@@ -30,7 +31,9 @@ class ResultsCollectionVC: UICollectionViewController  {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        collectionView?.reloadData()
+        DispatchQueue.main.async {
+            self.collectionView?.reloadData()
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
