@@ -16,12 +16,12 @@ class ResultsCollectionVC: UICollectionViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("viewdidload")
+        print("5")
         
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("collectionview count loading")
+        print("6")
         return store.movies.count
     }
     
@@ -46,8 +46,18 @@ class ResultsCollectionVC: UICollectionViewController  {
             
             if let indexPath = collectionView?.indexPathsForSelectedItems?[0].item {
                 dest.textValue = store.movies[indexPath].title
+                
+                if let url = URL(string: store.movies[indexPath].poster) {
+                    if let data = NSData(contentsOf: url) {
+                        dest.myImage.image = UIImage(data: data as Data)
+                    }
+                }
+                
             }
+            
+            
         }
     }
+    
     
 }

@@ -12,13 +12,19 @@ import UIKit
 class DetailVC: UIViewController {
     
     var textValue = ""
+    var myImage = UIImageView()
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         titleLabel.text = textValue
+        myImage.image = imageView.image
+        
+        
     }
     
 }

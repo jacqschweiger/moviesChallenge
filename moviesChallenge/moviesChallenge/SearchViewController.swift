@@ -40,18 +40,19 @@ class SearchViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if textField.text?.isEmpty == false {
             searchInput = self.textField.text!
-            print("search input")
+            print("1")
         } else {
             searchInput = "hi"
         }
         
         store.getMoviesFromAPI {
-            print("getting movies")
+            print("2")
+            print("3")
         }
         
         if segue.identifier == "showResults" {
             let dest = segue.destination as! ResultsCollectionVC
-            print("segue")
+            print("4")
             
         }
         
