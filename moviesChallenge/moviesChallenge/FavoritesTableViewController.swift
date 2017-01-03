@@ -17,13 +17,17 @@ class FavoritesTableViewController: UITableViewController {
         super.viewDidLoad()
         
         store.fetchData()
-        
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
+        print("1 fave movies: \(store.favoriteMovies.count)")
+        store.saveContext()
+        print("2 fave movies: \(store.favoriteMovies.count)")
         store.fetchData()
+        print("3 fave movies: \(store.favoriteMovies.count)")
         tableView.reloadData()
+        print("4 fave movies: \(store.favoriteMovies.count)")
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,6 +41,24 @@ class FavoritesTableViewController: UITableViewController {
         cell.textLabel?.text = movie.title
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            store.favoriteMovies.remove(at: indexPath.row)
+        }
+        print("5 fave movies: \(store.favoriteMovies.count)")
+
+        store.saveContext()
+        
+        print("6 fave movies: \(store.favoriteMovies.count)")
+
+        tableView.reloadData()
+        print("7 fave movies: \(store.favoriteMovies.count)")
     }
     
     

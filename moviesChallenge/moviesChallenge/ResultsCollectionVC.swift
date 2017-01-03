@@ -16,28 +16,25 @@ class ResultsCollectionVC: UICollectionViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        DispatchQueue.main.async {
-//            self.store.getMoviesFromAPI {
-//                print("2")
-//            }
-//        }
-        
-        collectionView?.reloadData()
-        collectionView?.reloadInputViews()
-        
-        
-        print("4")
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
         DispatchQueue.main.async {
             self.collectionView?.reloadData()
         }
+
+        print("0 fave movies: \(store.favoriteMovies.count)")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("8 fave movies: \(store.favoriteMovies.count)")
+        
+        DispatchQueue.main.async {
+            self.collectionView?.reloadData()
+        }
+        
+        
+        print("9 \(store.favoriteMovies.count)")
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("5")
         return store.movies.count
     }
     
