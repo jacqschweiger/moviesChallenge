@@ -12,5 +12,6 @@ import UIKit
 class ResultsCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var cellLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
 }

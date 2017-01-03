@@ -16,11 +16,12 @@ class ResultsCollectionVC: UICollectionViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(searchInput)
+        print("viewdidload")
         
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("collectionview count loading")
         return store.movies.count
     }
     
@@ -29,6 +30,13 @@ class ResultsCollectionVC: UICollectionViewController  {
         cell.backgroundColor = UIColor.blue
         let movie = store.movies[indexPath.item]
         cell.cellLabel.text = movie.title
+        
+        if let url = URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/2009-08-16_Puppy_at_Duke_East_2.jpg/399px-2009-08-16_Puppy_at_Duke_East_2.jpg") {
+            if let data = NSData(contentsOf: url) {
+                cell.imageView.image = UIImage(data: data as Data)
+            }        
+        }
+        
         return cell
     }
     
