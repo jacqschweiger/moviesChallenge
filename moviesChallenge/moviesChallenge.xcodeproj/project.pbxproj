@@ -19,6 +19,7 @@
 		7145DD941E19A31B00C14205 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7145DD931E19A31B00C14205 /* Movie.swift */; };
 		7145DD961E19A54700C14205 /* MoviesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7145DD951E19A54700C14205 /* MoviesDataStore.swift */; };
 		716C89A91E1B3E9900B1A8CC /* moviesChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 716C89A71E1B3E9900B1A8CC /* moviesChallenge.xcdatamodeld */; };
+		7171EB531E1C189F00CD8FDD /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7171EB521E1C189F00CD8FDD /* MovieInfo.swift */; };
 		71BA2F861E19FCAD003A0FE4 /* ResultsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA2F851E19FCAD003A0FE4 /* ResultsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		7145DD931E19A31B00C14205 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		7145DD951E19A54700C14205 /* MoviesDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesDataStore.swift; sourceTree = "<group>"; };
 		716C89A81E1B3E9900B1A8CC /* moviesChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = moviesChallenge.xcdatamodel; sourceTree = "<group>"; };
+		7171EB521E1C189F00CD8FDD /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 		71BA2F851E19FCAD003A0FE4 /* ResultsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 				7145DD8B1E199E5C00C14205 /* MoviesAPIClient.swift */,
 				7145DD951E19A54700C14205 /* MoviesDataStore.swift */,
 				7145DD931E19A31B00C14205 /* Movie.swift */,
+				7171EB521E1C189F00CD8FDD /* MovieInfo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7145DD761E1998C000C14205 /* SearchViewController.swift in Sources */,
+				7171EB531E1C189F00CD8FDD /* MovieInfo.swift in Sources */,
 				71BA2F861E19FCAD003A0FE4 /* ResultsCollectionViewCell.swift in Sources */,
 				7145DD741E1998C000C14205 /* AppDelegate.swift in Sources */,
 				7145DD8E1E19A0D800C14205 /* ResultsCollectionVC.swift in Sources */,

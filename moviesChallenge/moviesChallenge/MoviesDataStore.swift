@@ -17,7 +17,8 @@ class MoviesDataStore {
     private init() {}
     
     var movies: [Movie]!
-    var favoriteMovies: [Movie]!
+    var favoriteMovies: [Movie] = []
+    var movieInfo: MovieInfo!
     
     func getMoviesFromAPI(completion: @escaping ()->()) {
        
@@ -32,6 +33,17 @@ class MoviesDataStore {
         
         completion()
         
+    }
+    
+    func getFullMovieInfoFromAPI(completion: @escaping ()->()) {
+        
+        MoviesAPIClient.getFullMovieInfo { (result) in
+            var newMovieInfo = MovieInfo(dictionary: result)
+            newMovieInfo = self.movieInfo
+        }
+        
+        completion()
+
     }
     
     //MARK: Core Data

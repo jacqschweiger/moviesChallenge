@@ -9,3 +9,5 @@
 import Foundation
 
 var searchInput: String = "titanic"
+
+var movieTitle: String = "little miss sunshine"

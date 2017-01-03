@@ -47,12 +47,11 @@ class SearchViewController: UIViewController {
         
         store.getMoviesFromAPI {
             print("2")
-            print("3")
         }
         
         if segue.identifier == "showResults" {
             let dest = segue.destination as! ResultsCollectionVC
-            print("4")
+            print("3")
             
         }
         

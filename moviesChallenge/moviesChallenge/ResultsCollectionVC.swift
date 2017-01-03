@@ -16,12 +16,12 @@ class ResultsCollectionVC: UICollectionViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("5")
+        print("4")
         
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("6")
+        print("5")
         return store.movies.count
     }
     
@@ -40,17 +40,26 @@ class ResultsCollectionVC: UICollectionViewController  {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let indexPath = collectionView.indexPathsForSelectedItems?[0].item {
+            movieTitle = store.movies[indexPath].title
+            print("movie title: \(movieTitle)")
+        }
+        
+        store.getFullMovieInfoFromAPI {
+            print("getting full movie info")
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
+            
             let dest = segue.destination as! DetailVC
             
             if let indexPath = collectionView?.indexPathsForSelectedItems?[0].item {
                 dest.movie = store.movies[indexPath]
-                    
-                //dest.textValue = store.movies[indexPath].title
+                //dest.movieInfo = store.movies[indexPath].title
             }
-            
-            
         }
     }
     

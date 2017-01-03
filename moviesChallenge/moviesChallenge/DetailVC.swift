@@ -11,15 +11,16 @@ import UIKit
 
 class DetailVC: UIViewController {
     
-    //var textValue = ""
-    //var myImage = UIImageView()
     var movie: Movie!
+    var movieInfo: MovieInfo!
+    var store = MoviesDataStore.sharedInstance
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func addToFavoritesPressed(_ sender: Any) {
-        
+        store.favoriteMovies.append(movie)
+        print(store.favoriteMovies.count)
         
     }
     
@@ -28,9 +29,11 @@ class DetailVC: UIViewController {
         
         titleLabel.text = movie.title
         
-        
-//        titleLabel.text = textValue
-//        myImage.image = imageView.image
+        if let url = URL(string: self.movie.poster) {
+            if let data = NSData(contentsOf: url) {
+                self.imageView.image = UIImage(data: data as Data)
+            }
+        }
         
         
     }

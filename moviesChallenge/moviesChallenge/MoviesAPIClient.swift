@@ -46,5 +46,40 @@ class MoviesAPIClient {
         }
     }
     
+    class func getFullMovieInfo(with completion: @escaping ([String : String])-> Void) {
+        
+        var moviesDict: [String : String]!
+        
+        let urlString = "https://www.omdbapi.com/?t=\(movieTitle)&y=&plot=short&r=json"
+        
+        let url = URL(string: urlString)
+        
+        if let unwrappedURL = url {
+            
+            let session = URLSession.shared
+            
+            let task = session.dataTask(with: unwrappedURL) { (data, response, error) in
+                
+                if let unwrappedData = data {
+                    
+                    do {
+                        
+                        let responseJSON = try JSONSerialization.jsonObject(with: unwrappedData, options: []) as! [String: String]
+                        
+                        completion(responseJSON)
+                        
+                    } catch {
+                        
+                        print(error)
+                    }
+                }
+                
+            }
+            
+            task.resume()
+        }
+    }
+
+    
     
 }
