@@ -45,14 +45,9 @@ class ResultsCollectionVC: UICollectionViewController  {
             let dest = segue.destination as! DetailVC
             
             if let indexPath = collectionView?.indexPathsForSelectedItems?[0].item {
-                dest.textValue = store.movies[indexPath].title
-                
-                if let url = URL(string: store.movies[indexPath].poster) {
-                    if let data = NSData(contentsOf: url) {
-                        dest.myImage.image = UIImage(data: data as Data)
-                    }
-                }
-                
+                dest.movie = store.movies[indexPath]
+                    
+                //dest.textValue = store.movies[indexPath].title
             }
             
             

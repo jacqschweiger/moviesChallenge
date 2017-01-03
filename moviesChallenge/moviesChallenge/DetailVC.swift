@@ -11,18 +11,26 @@ import UIKit
 
 class DetailVC: UIViewController {
     
-    var textValue = ""
-    var myImage = UIImageView()
+    //var textValue = ""
+    //var myImage = UIImageView()
+    var movie: Movie!
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBAction func addToFavoritesPressed(_ sender: Any) {
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleLabel.text = textValue
-        myImage.image = imageView.image
+        titleLabel.text = movie.title
+        
+        
+//        titleLabel.text = textValue
+//        myImage.image = imageView.image
         
         
     }

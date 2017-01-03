@@ -74,6 +74,7 @@
 				7145DD891E199D3200C14205 /* Model */,
 				7145DD881E199D2B00C14205 /* View */,
 				7145DD731E1998C000C14205 /* AppDelegate.swift */,
+				716C89A71E1B3E9900B1A8CC /* moviesChallenge.xcdatamodeld */,
 				7145DD7D1E1998C000C14205 /* Assets.xcassets */,
 				7145DD7F1E1998C000C14205 /* LaunchScreen.storyboard */,
 				7145DD821E1998C000C14205 /* Info.plist */,
@@ -87,7 +88,6 @@
 				7145DD771E1998C000C14205 /* Main.storyboard */,
 				7145DD751E1998C000C14205 /* SearchViewController.swift */,
 				7145DD8D1E19A0D800C14205 /* ResultsCollectionVC.swift */,
-				716C89A71E1B3E9900B1A8CC /* moviesChallenge.xcdatamodeld */,
 				7145DD8F1E19A12D00C14205 /* DetailVC.swift */,
 				71BA2F851E19FCAD003A0FE4 /* ResultsCollectionViewCell.swift */,
 			);

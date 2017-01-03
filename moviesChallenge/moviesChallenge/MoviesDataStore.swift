@@ -17,6 +17,7 @@ class MoviesDataStore {
     private init() {}
     
     var movies: [Movie]!
+    var favoriteMovies: [Movie]!
     
     func getMoviesFromAPI(completion: @escaping ()->()) {
        
