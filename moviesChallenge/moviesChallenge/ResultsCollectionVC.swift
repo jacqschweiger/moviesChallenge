@@ -28,6 +28,10 @@ class ResultsCollectionVC: UICollectionViewController  {
             self.collectionView?.reloadData()
         }
         
+        for film in store.favoriteMovies {
+            print(film.title)
+        }
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

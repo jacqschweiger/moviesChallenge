@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class FavoritesTableViewController: UITableViewController {
     
@@ -44,10 +45,21 @@ class FavoritesTableViewController: UITableViewController {
         if editingStyle == .delete {
             store.favoriteMovies.remove(at: indexPath.row)
         }
-
-        store.saveContext()
         
+        let context = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<Film>(entityName: "Film")
+        
+        do {
+            let favoriteFilms = try context.fetch(fetchRequest)
+            store.favoriteMovies = favoriteFilms
+        } catch {
+            print("error")
+        }
         tableView.reloadData()
+
+//        store.saveContext()
+//        
+//        tableView.reloadData()
     }
     
     
