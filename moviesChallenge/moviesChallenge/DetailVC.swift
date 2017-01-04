@@ -17,6 +17,7 @@ class DetailVC: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var leoLabel: UILabel!
     
     @IBAction func addToFavoritesPressed(_ sender: Any) {
         let newFavorite = Film(context: store.persistentContainer.viewContext)
@@ -44,6 +45,9 @@ class DetailVC: UIViewController {
     func leoChecker(){
         if store.movieInfo.actors.contains("Leonardo DiCaprio") {
             print("Yes LEO!")
+            leoLabel.text = "Features Leonardo DiCaprio? YES!"
+        } else {
+            leoLabel.text = "Features Leonardo DiCaprio? No :("
         }
     }
     

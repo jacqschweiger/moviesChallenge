@@ -68,7 +68,7 @@
                                 <rect key="frame" x="118.5" y="20" width="138" height="235"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="138" height="235"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="139" height="235"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgs-in-FmI">
@@ -175,6 +175,13 @@
                                     <action selector="addToFavoritesPressed:" destination="fX9-hH-NID" eventType="touchUpInside" id="UE0-lq-KSd"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Features Leonardo DiCaprio?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAO-nw-rIc">
+                                <rect key="frame" x="16" y="594" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -182,6 +189,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="Ajx-ai-jSs" id="NXJ-tB-ZAi"/>
+                        <outlet property="leoLabel" destination="mAO-nw-rIc" id="sAz-O3-NRR"/>
                         <outlet property="titleLabel" destination="RSi-gy-clW" id="mLJ-jW-RAc"/>
                     </connections>
                 </viewController>
