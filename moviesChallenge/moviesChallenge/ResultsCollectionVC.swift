@@ -15,18 +15,21 @@ class ResultsCollectionVC: UICollectionViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        DispatchQueue.main.async {
-            self.collectionView?.reloadData()
-        }
 
+//        DispatchQueue.main.async {
+//            self.store.getMoviesFromAPI {
+//                print("movie count: \(self.store.movies.count)")
+//            }
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
-        DispatchQueue.main.async {
-            self.collectionView?.reloadData()
-        }
+//        DispatchQueue.main.async {
+//            self.store.getMoviesFromAPI {
+//                print("movie count: \(self.store.movies.count)")
+//            }
+//        }
         
     }
     
@@ -39,6 +42,12 @@ class ResultsCollectionVC: UICollectionViewController  {
         cell.backgroundColor = UIColor.blue
         let movie = store.movies[indexPath.item]
         cell.cellLabel.text = movie.title
+        
+        movieTitle = movie.title
+        
+        store.getMovieInfoFromAPI {
+            print("getting movie info api call")
+        }
         
         if let url = URL(string: store.movies[indexPath.item].poster) {
             if let data = NSData(contentsOf: url) {
@@ -56,7 +65,9 @@ class ResultsCollectionVC: UICollectionViewController  {
             
             if let indexPath = collectionView?.indexPathsForSelectedItems?[0].item {
                 dest.movie = store.movies[indexPath]
-                movieTitle = store.movies[indexPath].title
+                //movieTitle = store.movies[indexPath].title
+                dest.movieInfo = store.movieInfo
+                print("movie info in seque: \(self.store.movieInfo.actors)")
                 
                 //TODO
 //                self.store.getMovieInfoFromAPI {

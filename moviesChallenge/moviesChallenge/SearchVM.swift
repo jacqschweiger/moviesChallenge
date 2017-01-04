@@ -8,9 +8,9 @@
 
 import Foundation
 
-var searchInput: String = "titanic"
+var searchInput: String = ""
 
-var movieTitle: String = "little"
+var movieTitle: String = ""
 
 //var fakeDictionary = [
 //    "Title" : " ",

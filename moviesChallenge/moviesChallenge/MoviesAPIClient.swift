@@ -50,6 +50,7 @@ class MoviesAPIClient {
         //TODO change movie title to have no spaces or punctation, or use other input to search
         
         let urlString = "https://www.omdbapi.com/?t=\(movieTitle)&y=&plot=short&r=json"
+        print(movieTitle)
         
         let url = URL(string: urlString)
 
