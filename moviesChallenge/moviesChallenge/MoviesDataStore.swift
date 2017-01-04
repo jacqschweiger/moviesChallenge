@@ -17,7 +17,7 @@ class MoviesDataStore {
     private init() {}
     
     var movies: [Movie]!
-    var movieInfo: [MovieInfo]!
+    var movieInfo: MovieInfo!
     var favoriteMovies = [Film]()
     
     func getMoviesFromAPI(completion: @escaping ()->()) {
@@ -35,16 +35,20 @@ class MoviesDataStore {
     }
     
     func getMovieInfoFromAPI(completion: @escaping ()->()) {
-        
-//        movieInfo = []
-        
+        print("3")
         MoviesAPIClient.getFullMovieInfo { (results) in
+            print("4")
+            //TODO: fix this, print 5 not getting called
             let newMovieInfo = MovieInfo(dictionary: results)
-            self.movieInfo.append(newMovieInfo)
+            print("5")
+            
+            
+            //self.movieInfo = newMovieInfo
+            //print("new movie info: \(newMovieInfo), storemovieinfo \(self.movieInfo)")
         }
-
+        print("6")
         completion()
-    
+        print("7")
     }
     
     

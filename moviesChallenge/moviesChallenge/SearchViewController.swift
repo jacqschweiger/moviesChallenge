@@ -51,12 +51,10 @@ class SearchViewController: UIViewController {
         }
         
         self.store.getMoviesFromAPI {
-            print("getting movies from API")
         }
         
         if segue.identifier == "showResults" {
             let dest = segue.destination as! ResultsCollectionVC
-            
         }
         
         

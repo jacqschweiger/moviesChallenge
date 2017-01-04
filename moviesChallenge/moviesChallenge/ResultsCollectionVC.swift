@@ -15,7 +15,7 @@ class ResultsCollectionVC: UICollectionViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         DispatchQueue.main.async {
             self.store.getMoviesFromAPI {
             }
@@ -37,14 +37,10 @@ class ResultsCollectionVC: UICollectionViewController  {
         let movie = store.movies[indexPath.item]
         cell.cellLabel.text = movie.title
         
-//        store.getMovieInfoFromAPI {
-//            print("getting movie info api call")
-//        }
-        
         if let url = URL(string: store.movies[indexPath.item].poster) {
             if let data = NSData(contentsOf: url) {
                 cell.imageView.image = UIImage(data: data as Data)
-            }        
+            }
         }
         
         return cell
@@ -56,15 +52,17 @@ class ResultsCollectionVC: UICollectionViewController  {
             let dest = segue.destination as! DetailVC
             
             if let indexPath = collectionView?.indexPathsForSelectedItems?[0].item {
+                print("1")
                 dest.movie = store.movies[indexPath]
                 movieTitle = store.movies[indexPath].title
-                print(movieTitle)
             }
             
+            store.getMovieInfoFromAPI {
+                print("2")
+            }
         }
         
         if segue.identifier == "showFavorites" {
-            
             let dest = segue.destination as! FavoritesTableViewController
         }
     }
