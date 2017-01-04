@@ -47,34 +47,33 @@ class MoviesAPIClient {
     }
     
     class func getFullMovieInfo(with completion: @escaping ([String : String])-> Void) {
-        
-        print("1")
+        //TODO change movie title to have no spaces or punctation, or use other input to search
         
         let urlString = "https://www.omdbapi.com/?t=\(movieTitle)&y=&plot=short&r=json"
-        print("2")
-        let newURL = URL(string: urlString)
-        print("3")
-        if let unwrappedURL = newURL {
-            print("4")
+        
+        let url = URL(string: urlString)
+
+        if let unwrappedURL = url {
+            
             let session = URLSession.shared
-            print("5")
+
             let task = session.dataTask(with: unwrappedURL) { (data, response, error) in
-                print("6")
+
                 if let unwrappedData = data {
-                    print("7")
+
                     do {
-                        print("8")
+
                         let responseJSON = try JSONSerialization.jsonObject(with: unwrappedData, options: []) as! [String: String]
-                        print("9")
+
                         completion(responseJSON)
-                        print("10")
+
                     } catch {
-                        print("11")
+
                         print(error)
                     }
-                    print("12")
+
                 }
-                print("13")
+
             }
             
             task.resume()
