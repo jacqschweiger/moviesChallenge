@@ -24,13 +24,7 @@ class ResultsCollectionVC: UICollectionViewController  {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-//        DispatchQueue.main.async {
-//            self.store.getMoviesFromAPI {
-//                print("movie count: \(self.store.movies.count)")
-//            }
-//        }
-        
+        collectionView?.reloadData()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -65,15 +59,9 @@ class ResultsCollectionVC: UICollectionViewController  {
             
             if let indexPath = collectionView?.indexPathsForSelectedItems?[0].item {
                 dest.movie = store.movies[indexPath]
-                //movieTitle = store.movies[indexPath].title
                 dest.movieInfo = store.movieInfo
                 print("movie info in seque: \(self.store.movieInfo.actors)")
-                
-                //TODO
-//                self.store.getMovieInfoFromAPI {
-//                    let newMovieInfo = self.store.movieInfo
-//                    dest.movieInfo = newMovieInfo
-//                }
+            
             }
             
         }

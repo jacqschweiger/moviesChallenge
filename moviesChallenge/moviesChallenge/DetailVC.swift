@@ -24,12 +24,11 @@ class DetailVC: UIViewController {
         store.saveContext()
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         titleLabel.text = movie.title
-        
-        //print(store.movieInfo.actors)
         
         if let url = URL(string: self.movie.poster) {
             if let data = NSData(contentsOf: url) {
@@ -37,12 +36,14 @@ class DetailVC: UIViewController {
             }
         }
         
+        leoChecker()
     }
     
+    
+    
     func leoChecker(){
-        
         if store.movieInfo.actors.contains("Leonardo DiCaprio") {
-            
+            print("Yes LEO!")
         }
     }
     
