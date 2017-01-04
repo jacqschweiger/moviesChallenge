@@ -95,7 +95,6 @@ class MoviesDataStore {
     
     func deleteData(indexPath: Int){
         let context = persistentContainer.viewContext
-       //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         context.delete(self.favoriteMovies[indexPath] as NSManagedObject)
         self.favoriteMovies.remove(at: indexPath)
@@ -104,11 +103,9 @@ class MoviesDataStore {
         
         do {
             try context.save()
-            //self.tableView.reloadData()
         } catch {
             print("error : \(error)")
         }
-
     }
     
 }

@@ -21,7 +21,8 @@ class FavoritesTableViewController: UITableViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        store.fetchData()
+        tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,11 +43,7 @@ class FavoritesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//            if editingStyle == .delete {
-//                store.saveContext()
-//                store.favoriteMovies.remove(at: indexPath.row)
-//                tableView.reloadData()
-//        }
+        
         if editingStyle == .delete {
             store.deleteData(indexPath: indexPath.row)
         }

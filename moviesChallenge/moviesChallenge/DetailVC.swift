@@ -22,7 +22,6 @@ class DetailVC: UIViewController {
         let newFavorite = Film(context: store.persistentContainer.viewContext)
         newFavorite.title = movie.title
         store.saveContext()
-        
     }
     
     override func viewDidLoad() {
