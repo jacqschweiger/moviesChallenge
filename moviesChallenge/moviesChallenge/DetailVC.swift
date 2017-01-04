@@ -31,6 +31,7 @@ class DetailVC: UIViewController {
         
         titleLabel.text = movie.title
         
+        
         if let url = URL(string: self.movie.poster) {
             if let data = NSData(contentsOf: url) {
                 self.imageView.image = UIImage(data: data as Data)
@@ -43,7 +44,7 @@ class DetailVC: UIViewController {
     
     
     func leoChecker(){
-        if store.movieInfo.actors.contains("Leonardo DiCaprio") {
+        if self.movieInfo.actors.contains("Leonardo DiCaprio") {
             print("Yes LEO!")
             leoLabel.text = "Features Leonardo DiCaprio? YES!"
         } else {

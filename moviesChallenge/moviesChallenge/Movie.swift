@@ -15,6 +15,7 @@ class Movie {
     var imdbID: String
     var type: String
     var poster: String
+    var movieInfo: [String: String] = [:]
     
     init(dictionary: [String: String]) {
         self.title = dictionary["Title"]!

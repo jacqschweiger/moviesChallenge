@@ -18,7 +18,8 @@
  
  DONE A user should be able to favorite films. These films that were "favorited" should be persisted using Core Data.
  
-
+ can i make the api call and save the movie info to the movie object? OR: 
+ how do i link the movie info to a specific movie? need title for api call. then, can populate views with movieinfo.
 */
 
 import UIKit

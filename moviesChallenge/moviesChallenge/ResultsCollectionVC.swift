@@ -34,6 +34,7 @@ class ResultsCollectionVC: UICollectionViewController  {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCell", for: indexPath) as! ResultsCollectionViewCell
         cell.backgroundColor = UIColor.blue
+        
         let movie = store.movies[indexPath.item]
         cell.cellLabel.text = movie.title
         
@@ -42,7 +43,7 @@ class ResultsCollectionVC: UICollectionViewController  {
         store.getMovieInfoFromAPI {
             print("getting movie info api call")
         }
-        
+            
         if let url = URL(string: store.movies[indexPath.item].poster) {
             if let data = NSData(contentsOf: url) {
                 cell.imageView.image = UIImage(data: data as Data)
@@ -59,9 +60,6 @@ class ResultsCollectionVC: UICollectionViewController  {
             
             if let indexPath = collectionView?.indexPathsForSelectedItems?[0].item {
                 dest.movie = store.movies[indexPath]
-                dest.movieInfo = store.movieInfo
-                print("movie info in seque: \(self.store.movieInfo.actors)")
-            
             }
             
         }
