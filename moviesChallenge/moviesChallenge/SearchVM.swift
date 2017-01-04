@@ -12,25 +12,25 @@ var searchInput: String = "titanic"
 
 var movieTitle: String = "little"
 
-var fakeDictionary = [
-    "Title" : " ",
-    "Year" : " ",
-    "Rated" : " ",
-    "Released" : " ",
-    "Runtime" : " ",
-    "Genre" : " ",
-    "Director" : " ",
-    "Writer" : " ",
-    "Actors" : " ",
-    "Plot" : " ",
-    "Language" : " ",
-    "Country" : " ",
-    "Awards" : " ",
-    "Poster" : " ",
-    "Metascore" : " ",
-    "imdbRating" : " ",
-    "imdbVotes" : " ",
-    "imdbID" : " ",
-    "Type" : " ",
-    "Response" : " "]
+//var fakeDictionary = [
+//    "Title" : " ",
+//    "Year" : " ",
+//    "Rated" : " ",
+//    "Released" : " ",
+//    "Runtime" : " ",
+//    "Genre" : " ",
+//    "Director" : " ",
+//    "Writer" : " ",
+//    "Actors" : " ",
+//    "Plot" : " ",
+//    "Language" : " ",
+//    "Country" : " ",
+//    "Awards" : " ",
+//    "Poster" : " ",
+//    "Metascore" : " ",
+//    "imdbRating" : " ",
+//    "imdbVotes" : " ",
+//    "imdbID" : " ",
+//    "Type" : " ",
+//    "Response" : " "]
 

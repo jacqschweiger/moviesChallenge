@@ -59,13 +59,12 @@ class ResultsCollectionVC: UICollectionViewController  {
                 movieTitle = store.movies[indexPath].title
                 
                 //TODO
-                DispatchQueue.main.async {
-                    self.store.getMovieInfoFromAPI {
-                        dest.movieInfo = self.store.movieInfo
-                        print(self.store.movieInfo.actors)
-                    }
-                }
+//                self.store.getMovieInfoFromAPI {
+//                    let newMovieInfo = self.store.movieInfo
+//                    dest.movieInfo = newMovieInfo
+//                }
             }
+            
         }
         
         if segue.identifier == "showFavorites" {
