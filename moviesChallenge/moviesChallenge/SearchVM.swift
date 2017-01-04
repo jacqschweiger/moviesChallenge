@@ -27,7 +27,7 @@ var fakeDictionary = [
     "Country" : " ",
     "Awards" : " ",
     "Poster" : " ",
-    "MetaScore" : " ",
+    "Metascore" : " ",
     "imdbRating" : " ",
     "imdbVotes" : " ",
     "imdbID" : " ",

@@ -40,10 +40,8 @@ class MoviesDataStore {
         
         MoviesAPIClient.getFullMovieInfo { (results) in
             self.movieInfo = MovieInfo(dictionary: results)
-            print(self.movieInfo.actors)
         }
         completion()
-        print(self.movieInfo.actors)
     }
     
     

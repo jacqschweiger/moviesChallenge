@@ -27,7 +27,9 @@ class DetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleLabel.text = movie.title
+        movieInfo = store.movieInfo
+        //titleLabel.text = movie.title
+        titleLabel.text = movieInfo.year
         
         if let url = URL(string: self.movie.poster) {
             if let data = NSData(contentsOf: url) {
