@@ -16,7 +16,7 @@ class FavoritesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     
@@ -42,24 +42,17 @@ class FavoritesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//            if editingStyle == .delete {
+//                store.saveContext()
+//                store.favoriteMovies.remove(at: indexPath.row)
+//                tableView.reloadData()
+//        }
         if editingStyle == .delete {
-            store.favoriteMovies.remove(at: indexPath.row)
+            store.deleteData(indexPath: indexPath.row)
         }
         
-        let context = persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<Film>(entityName: "Film")
-        
-        do {
-            let favoriteFilms = try context.fetch(fetchRequest)
-            store.favoriteMovies = favoriteFilms
-        } catch {
-            print("error")
-        }
         tableView.reloadData()
-
-//        store.saveContext()
-//        
-//        tableView.reloadData()
+        
     }
     
     

@@ -20,7 +20,7 @@ class MoviesDataStore {
     var favoriteMovies = [Film]()
     
     func getMoviesFromAPI(completion: @escaping ()->()) {
-       
+        
         movies = []
         
         MoviesAPIClient.getMovies { (results) in
@@ -90,9 +90,26 @@ class MoviesDataStore {
         } catch {
             print("error")
         }
+        
+    }
+    
+    func deleteData(indexPath: Int){
+        let context = persistentContainer.viewContext
+       //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        context.delete(self.favoriteMovies[indexPath] as NSManagedObject)
+        self.favoriteMovies.remove(at: indexPath)
+        
+        let _ : NSError! = nil
+        
+        do {
+            try context.save()
+            //self.tableView.reloadData()
+        } catch {
+            print("error : \(error)")
+        }
 
     }
-
     
 }
 
