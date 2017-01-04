@@ -13,6 +13,7 @@ class DetailVC: UIViewController {
     
     var movie: Movie!
     var store = MoviesDataStore.sharedInstance
+    var movieInfo: MovieInfo!
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!

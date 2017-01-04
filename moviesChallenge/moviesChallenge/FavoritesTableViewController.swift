@@ -19,7 +19,6 @@ class FavoritesTableViewController: UITableViewController {
         
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         store.fetchData()
         tableView.reloadData()

@@ -46,11 +46,11 @@ class MoviesAPIClient {
         }
     }
     
-    class func getFullMovieInfo(with completion: @escaping ([String : String])-> Void) {
+    class func getFullMovieInfo(with selectedMovieTitle: String, completion: @escaping ([String : String])-> Void) {
         
-        var moviesDict: [String : String]!
+        var movieInfoDict: [String : String]!
         
-        let urlString = "https://www.omdbapi.com/?t=\(movieTitle)&y=&plot=short&r=json"
+        let urlString = "https://www.omdbapi.com/?t=\(selectedMovieTitle)&y=&plot=short&r=json"
         
         let url = URL(string: urlString)
         

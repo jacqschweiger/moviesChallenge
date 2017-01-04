@@ -61,6 +61,10 @@ class ResultsCollectionVC: UICollectionViewController  {
             if let indexPath = collectionView?.indexPathsForSelectedItems?[0].item {
                 dest.movie = store.movies[indexPath]
             }
+            
+            
+            
+            
         }
         
         if segue.identifier == "showFavorites" {
