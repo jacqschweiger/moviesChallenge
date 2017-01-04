@@ -39,4 +39,11 @@ class DetailVC: UIViewController {
         
     }
     
+    func leoChecker(){
+        
+        if store.movieInfo.actors.contains("Leonardo DiCaprio") {
+            
+        }
+    }
+    
 }
