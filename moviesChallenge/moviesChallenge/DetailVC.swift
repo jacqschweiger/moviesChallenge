@@ -12,8 +12,8 @@ import UIKit
 class DetailVC: UIViewController {
     
     var movie: Movie!
-    var store = MoviesDataStore.sharedInstance
     var movieInfo: MovieInfo!
+    var store = MoviesDataStore.sharedInstance
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -27,9 +27,7 @@ class DetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        movieInfo = store.movieInfo
-        //titleLabel.text = movie.title
-        titleLabel.text = movieInfo.year
+        titleLabel.text = movie.title
         
         if let url = URL(string: self.movie.poster) {
             if let data = NSData(contentsOf: url) {

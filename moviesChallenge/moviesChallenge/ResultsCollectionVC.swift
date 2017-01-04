@@ -58,9 +58,11 @@ class ResultsCollectionVC: UICollectionViewController  {
                 dest.movie = store.movies[indexPath]
                 movieTitle = store.movies[indexPath].title
                 
+                //TODO
                 DispatchQueue.main.async {
                     self.store.getMovieInfoFromAPI {
                         dest.movieInfo = self.store.movieInfo
+                        print(self.store.movieInfo.actors)
                     }
                 }
             }
