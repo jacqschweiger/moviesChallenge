@@ -18,7 +18,7 @@
  
  DONE A user should be able to favorite films. These films that were "favorited" should be persisted using Core Data.
  
- can i make the api call and save the movie info to the movie object? OR: 
+ can i make the api call and save the movie info to the movie object? OR:
  how do i link the movie info to a specific movie? need title for api call. then, can populate views with movieinfo.
 */
 
@@ -45,7 +45,6 @@ class SearchViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if textField.text?.isEmpty == false {
             searchInput = self.textField.text!
-            print(searchInput)
 
         } else {
             searchInput = "hi"

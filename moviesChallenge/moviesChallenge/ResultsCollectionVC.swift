@@ -16,11 +16,10 @@ class ResultsCollectionVC: UICollectionViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        DispatchQueue.main.async {
-//            self.store.getMoviesFromAPI {
-//                print("movie count: \(self.store.movies.count)")
-//            }
-//        }
+        DispatchQueue.main.async {
+            self.store.getMoviesFromAPI {
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,12 +37,10 @@ class ResultsCollectionVC: UICollectionViewController  {
         let movie = store.movies[indexPath.item]
         cell.cellLabel.text = movie.title
         
-        movieTitle = movie.title
+//        store.getMovieInfoFromAPI {
+//            print("getting movie info api call")
+//        }
         
-        store.getMovieInfoFromAPI {
-            print("getting movie info api call")
-        }
-            
         if let url = URL(string: store.movies[indexPath.item].poster) {
             if let data = NSData(contentsOf: url) {
                 cell.imageView.image = UIImage(data: data as Data)
@@ -60,6 +57,8 @@ class ResultsCollectionVC: UICollectionViewController  {
             
             if let indexPath = collectionView?.indexPathsForSelectedItems?[0].item {
                 dest.movie = store.movies[indexPath]
+                movieTitle = store.movies[indexPath].title
+                print(movieTitle)
             }
             
         }

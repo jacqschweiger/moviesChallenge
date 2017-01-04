@@ -38,14 +38,13 @@ class DetailVC: UIViewController {
             }
         }
         
-        leoChecker()
+    
     }
     
     
     
     func leoChecker(){
         if self.movieInfo.actors.contains("Leonardo DiCaprio") {
-            print("Yes LEO!")
             leoLabel.text = "Features Leonardo DiCaprio? YES!"
         } else {
             leoLabel.text = "Features Leonardo DiCaprio? No :("
