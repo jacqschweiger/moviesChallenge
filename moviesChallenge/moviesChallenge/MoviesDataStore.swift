@@ -30,19 +30,20 @@ class MoviesDataStore {
                 self.movies.append(newMovie)
             }
         }
-        
         completion()
         
     }
     
     func getMovieInfoFromAPI(completion: @escaping ()->()) {
         
+        movieInfo = MovieInfo(dictionary: fakeDictionary)
+        
         MoviesAPIClient.getFullMovieInfo { (results) in
             self.movieInfo = MovieInfo(dictionary: results)
+            print(self.movieInfo.actors)
         }
-        
         completion()
-        
+        print(self.movieInfo.actors)
     }
     
     

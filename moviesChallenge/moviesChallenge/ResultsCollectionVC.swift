@@ -63,7 +63,6 @@ class ResultsCollectionVC: UICollectionViewController  {
                         dest.movieInfo = self.store.movieInfo
                     }
                 }
-                print(self.store.movieInfo.actors)
             }
         }
         

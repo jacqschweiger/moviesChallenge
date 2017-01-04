@@ -64,7 +64,7 @@ class MoviesAPIClient {
                     do {
 
                         let responseJSON = try JSONSerialization.jsonObject(with: unwrappedData, options: []) as! [String: String]
-
+                        print(responseJSON)
                         completion(responseJSON)
 
                     } catch {
