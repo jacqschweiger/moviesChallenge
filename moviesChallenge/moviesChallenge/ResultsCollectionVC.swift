@@ -28,10 +28,6 @@ class ResultsCollectionVC: UICollectionViewController  {
             self.collectionView?.reloadData()
         }
         
-        for film in store.favoriteMovies {
-            print(film.title)
-        }
-        
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -60,11 +56,15 @@ class ResultsCollectionVC: UICollectionViewController  {
             
             if let indexPath = collectionView?.indexPathsForSelectedItems?[0].item {
                 dest.movie = store.movies[indexPath]
+                movieTitle = store.movies[indexPath].title
+                
+                DispatchQueue.main.async {
+                    self.store.getMovieInfoFromAPI {
+                        dest.movieInfo = self.store.movieInfo
+                    }
+                }
+                
             }
-            
-            
-            
-            
         }
         
         if segue.identifier == "showFavorites" {

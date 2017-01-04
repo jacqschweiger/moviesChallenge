@@ -19,7 +19,6 @@ class DetailVC: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func addToFavoritesPressed(_ sender: Any) {
-        
         let newFavorite = Film(context: store.persistentContainer.viewContext)
         newFavorite.title = movie.title
         store.saveContext()
