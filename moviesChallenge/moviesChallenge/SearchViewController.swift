@@ -12,7 +12,7 @@
  
  TODO: A user should be able to tap on a cell and see a detail view with information about the movie.
  
- TODO: If the movie contains "Leonardo DiCaprio" as one of its actors, then the cell and detail view should indicate that in some way.
+ DONE: If the movie contains "Leonardo DiCaprio" as one of its actors, then the cell and detail view should indicate that in some way.
  
  DONE A user should be able to search for movies or TV shows to then view them in a UICollectionView or UITableView (your choice).
  

@@ -14,6 +14,9 @@ class DetailVC: UIViewController {
     var movie: Movie!
     var store = MoviesDataStore.sharedInstance
     
+    @IBOutlet weak var genreLabel: UILabel!
+    @IBOutlet weak var plotTextView: UITextView!
+    @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var leoLabel: UILabel!
@@ -29,6 +32,11 @@ class DetailVC: UIViewController {
         super.viewDidLoad()
         print("4")
         titleLabel.text = movie.title
+        yearLabel.text = "Year: \(store.movieInfo.year)"
+        plotTextView.isEditable = false
+        plotTextView.text = store.movieInfo.plot
+        genreLabel.text = "Genre: \(store.movieInfo.genre)"
+        
         print("8 \(store.movieInfo.actors)")
         
         if let url = URL(string: self.movie.poster) {
@@ -36,21 +44,17 @@ class DetailVC: UIViewController {
                 self.imageView.image = UIImage(data: data as Data)
             }
         }
+        
+        leoChecker()
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        print(store.movieInfo.actors)
-//    }
-
     
-    
-    
-//    func leoChecker(){
-//        if self.movieInfo.actors.contains("Leonardo DiCaprio") {
-//            leoLabel.text = "Features Leonardo DiCaprio? YES!"
-//        } else {
-//            leoLabel.text = "Features Leonardo DiCaprio? No :("
-//        }
-//    }
+    func leoChecker(){
+        if store.movieInfo.actors.contains("Leonardo DiCaprio") {
+            leoLabel.text = "Features Leonardo DiCaprio? YES!"
+        } else {
+            leoLabel.text = "Features Leonardo DiCaprio? No :("
+        }
+    }
     
 }
