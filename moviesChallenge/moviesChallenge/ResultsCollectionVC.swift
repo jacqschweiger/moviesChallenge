@@ -22,10 +22,6 @@ class ResultsCollectionVC: UICollectionViewController  {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        collectionView?.reloadData()
-    }
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return store.movies.count
     }
@@ -33,8 +29,8 @@ class ResultsCollectionVC: UICollectionViewController  {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCell", for: indexPath) as! ResultsCollectionViewCell
         cell.backgroundColor = UIColor.blue
-        
         let movie = store.movies[indexPath.item]
+        
         cell.cellLabel.text = movie.title
         
         if let url = URL(string: store.movies[indexPath.item].poster) {
@@ -42,6 +38,8 @@ class ResultsCollectionVC: UICollectionViewController  {
                 cell.imageView.image = UIImage(data: data as Data)
             }
         }
+        
+        //TODO: cell displays if movie features Leonardo DiCaprio
         
         return cell
     }
