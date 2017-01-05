@@ -12,6 +12,8 @@ import CoreData
 
 class FavoritesTableViewController: UITableViewController {
     
+    //TODO: segue row to detail view
+    
     var store = MoviesDataStore.sharedInstance
     
     override func viewDidLoad() {
@@ -47,10 +49,6 @@ class FavoritesTableViewController: UITableViewController {
         }
         
         tableView.reloadData()
-        
     }
-    
-    
-    
-    
+
 }

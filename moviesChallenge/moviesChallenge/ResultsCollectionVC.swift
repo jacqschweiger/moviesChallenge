@@ -27,10 +27,12 @@ class ResultsCollectionVC: UICollectionViewController  {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCell", for: indexPath) as! ResultsCollectionViewCell
         cell.backgroundColor = UIColor.blue
-        let movie = store.movies[indexPath.item]
         
+        
+        let movie = store.movies[indexPath.item]
         cell.cellLabel.text = movie.title
         
         if let url = URL(string: store.movies[indexPath.item].poster) {
@@ -39,7 +41,7 @@ class ResultsCollectionVC: UICollectionViewController  {
             }
         }
         
-        //TODO: cell displays whether movie features Leonardo DiCaprio
+        //TODO: display whether movie features Leonardo DiCaprio in cell
         
         return cell
     }

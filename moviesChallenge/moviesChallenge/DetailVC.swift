@@ -46,7 +46,7 @@ class DetailVC: UIViewController {
         leoChecker()
     }
     
-    
+
     func leoChecker(){
         if store.movieInfo.actors.contains("Leonardo DiCaprio") {
             leoLabel.text = "Features Leonardo DiCaprio? YES!"
