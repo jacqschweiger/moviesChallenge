@@ -30,14 +30,12 @@ class DetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("4")
+        
         titleLabel.text = movie.title
         yearLabel.text = "Year: \(store.movieInfo.year)"
         plotTextView.isEditable = false
         plotTextView.text = store.movieInfo.plot
         genreLabel.text = "Genre: \(store.movieInfo.genre)"
-        
-        print("8 \(store.movieInfo.actors)")
         
         if let url = URL(string: self.movie.poster) {
             if let data = NSData(contentsOf: url) {

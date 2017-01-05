@@ -39,7 +39,7 @@ class ResultsCollectionVC: UICollectionViewController  {
             }
         }
         
-        //TODO: cell displays if movie features Leonardo DiCaprio
+        //TODO: cell displays whether movie features Leonardo DiCaprio
         
         return cell
     }
@@ -50,13 +50,11 @@ class ResultsCollectionVC: UICollectionViewController  {
             let dest = segue.destination as! DetailVC
             
             if let indexPath = collectionView?.indexPathsForSelectedItems?[0].item {
-                print("1")
                 dest.movie = store.movies[indexPath]
                 movieTitle = store.movies[indexPath].title
             }
             
             store.getMovieInfoFromAPI {
-                print("4")
             }
         }
         
