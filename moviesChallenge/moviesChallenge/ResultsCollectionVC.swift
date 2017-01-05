@@ -58,7 +58,7 @@ class ResultsCollectionVC: UICollectionViewController  {
             }
             
             store.getMovieInfoFromAPI {
-                print("2")
+                print("4")
             }
         }
         

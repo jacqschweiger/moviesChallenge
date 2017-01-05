@@ -35,20 +35,20 @@ class MoviesDataStore {
     }
     
     func getMovieInfoFromAPI(completion: @escaping ()->()) {
-        print("3")
+        print("2")
         MoviesAPIClient.getFullMovieInfo { (results) in
-            print("4")
-            //TODO: fix this, print 5 not getting called
+            print("6")
+            //TODO: for api call itself, fix movie title punctuation issues
             let newMovieInfo = MovieInfo(dictionary: results)
-            print("5")
+            print("7")
             
             
-            //self.movieInfo = newMovieInfo
-            //print("new movie info: \(newMovieInfo), storemovieinfo \(self.movieInfo)")
+            self.movieInfo = newMovieInfo
+            print("new movie info: \(newMovieInfo), storemovieinfo \(self.movieInfo)")
         }
-        print("6")
+        print("3")
         completion()
-        print("7")
+        print("5")
     }
     
     
