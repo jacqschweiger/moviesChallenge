@@ -29,7 +29,7 @@ class DetailVC: UIViewController {
         super.viewDidLoad()
         print("4")
         titleLabel.text = movie.title
-        //movie info is nil
+        print("8 \(store.movieInfo.actors)")
         
         if let url = URL(string: self.movie.poster) {
             if let data = NSData(contentsOf: url) {

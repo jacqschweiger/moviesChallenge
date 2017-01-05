@@ -11,26 +11,3 @@ import Foundation
 var searchInput: String = ""
 
 var movieTitle: String = ""
-
-//var fakeDictionary = [
-//    "Title" : " ",
-//    "Year" : " ",
-//    "Rated" : " ",
-//    "Released" : " ",
-//    "Runtime" : " ",
-//    "Genre" : " ",
-//    "Director" : " ",
-//    "Writer" : " ",
-//    "Actors" : " ",
-//    "Plot" : " ",
-//    "Language" : " ",
-//    "Country" : " ",
-//    "Awards" : " ",
-//    "Poster" : " ",
-//    "Metascore" : " ",
-//    "imdbRating" : " ",
-//    "imdbVotes" : " ",
-//    "imdbID" : " ",
-//    "Type" : " ",
-//    "Response" : " "]
-
